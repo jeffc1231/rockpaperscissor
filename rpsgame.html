@@ -1,0 +1,46 @@
+<script>
+function getComputerChoice(){
+    const pick = ['rock', 'paper', 'scissors'];
+    return pick[Math.floor(Math.random() * pick.length)];
+}
+
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection){
+    outcome = "Its a tie!";
+    return outcome;
+  }
+  else if (playerSelection === "rock" && computerSelection === "paper"){
+    outcome = "You lose!";
+    return outcome;
+  }
+  else if (playerSelection === "paper" && computerSelection === "rock"){
+    outcome = "You win!";
+    return outcome;
+  }
+  else if (playerSelection === "scissors" && computerSelection === "paper"){
+    outcome = "You win!";
+    return outcome;
+  }
+  else if (playerSelection === "paper" && computerSelection === "scissors"){
+    outcome = "You lose!";
+    return outcome;
+  }
+  else {
+    outcome = "You lose!";
+    return outcome;
+  }
+  }
+
+
+const playerSelection = prompt("Enter your input for Rock, Paper, Scissors:");
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+</script>
+
+<!-- Pseudocode
+Create a variable playerSelection that stores the user's input that is case-insensitive
+Create a variable computerSelection that stores the computer's randomly generated input
+Create a function named getComputerChoice that take in the computer's choice
+Create a function named playRound to play the actual game
+This function should compute the ordering of the rock paper scissor tiers
+This should return if the user has won the game or lost the game -->
